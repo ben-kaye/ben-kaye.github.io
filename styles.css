@@ -4,10 +4,17 @@
     box-sizing: border-box;
   }
   
+html, body {
+    height: 100vh;
+    width: 100vw;
+}  
 
 body {
     font-size: 17px;
     line-height: 1.6em;
+
+    
+    min-width: 320px;
 
     font-family: 'Roboto', sans-serif;
     color:#414141;
@@ -29,4 +36,55 @@ a:visited:hover {
 a:active,
 a:visited:active {
   color: #5995DA;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 3em;
+    background-color: #d5e7f8;
+    padding-left: 1em;
+}
+
+.navlinks {
+    max-width: 300px;
+    width: 250px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.content-wrapper {
+    height: 80%;
+    padding-left: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+header {
+    /* padding-left: 1em; */
+    width: 60%;
+    padding-bottom: 1em;
+}
+
+.content {
+    width: 60%;
+    /* padding-left: 1em; */
+
+}
+
+footer {
+    background-color: #414141;
+    color: #FEFEFE;
+    text-align: right;
+    height: 2.2em;
+    padding-right: 0.7em;
+
 }
