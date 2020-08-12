@@ -51,9 +51,9 @@ a:visited:active {
     justify-content: space-between;
     align-items: center;
     height: 3em;
-    background-color: #96bbdd;
+    background-color: #04ceee;
     padding-left: 1em;
-    border-color: #78a6d1;
+    border-color: #2ADFFB;
     border-style: none none groove none;
     color: #ffffff;
 }
@@ -64,8 +64,31 @@ a:visited:active {
     display: flex;
     justify-content: space-evenly;
 }
+
+.navlinks > div > a:link,
+.navlinks > div > a:visited {
+  color: #fbff00;
+  text-decoration: none;
+  font-weight: 500;
+}
+.navlinks > div > a:hover,
+.navlinks > div > a:visited:hover {
+  color: #fbff00;
+  /* border-bottom: 1px solid #FF8F18; */
+  border-bottom: none;
+  text-emphasis: triangle;
+  font-weight: 700;
+}
+.navlinks > div > a:active,
+.navlinks > div > a:visited:active {
+  color: #EE2404;
+}
+
+
 .content-wrapper {
-    height: 80%;
+    height: 100%;
+    padding-top: 2em;
+
     min-width: 400px;
     overflow-y: scroll;
 }
@@ -83,7 +106,8 @@ a:visited:active {
 header {
     /* padding-left: 1em; */
     /* width: 60%; */
-    padding-bottom: 1em;
+    /* margin-bottom: 1em; */
+    padding-bottom: 0.4em;
     width: 100%;
     border-color: navy;
     border-style: none none groove none;
@@ -91,7 +115,9 @@ header {
 
 .content {
     text-align: left;
+    /* padding-top: 1em; */
     width: 100%;
+    padding-bottom: 2em;
 }
 
 footer {
@@ -99,13 +125,12 @@ footer {
     color: #FEFEFE;
     text-align: right;
     height: 2.2em;
-    padding-right: 0.7em;
-    padding-top: 0.3em;
+    padding: 0.3em 0.6em 0.3em 0;
 
 }
 
 .project {
-  margin-bottom: 2em;
+  margin-top: 2em;
   outline-style: inset;
   outline-color: #a7a7a7;
   padding-top: 1em;
