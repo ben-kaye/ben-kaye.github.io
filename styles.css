@@ -140,14 +140,21 @@ footer {
 }
 
 .small-img {
-  width: 40%;
+  width: 100%;
   height: auto;
-  text-align: center;
+}
+
+.im-container {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .pic-box {
   display: flex;
   justify-content: space-evenly;
+  align-items: stretch;
   flex-wrap: wrap;
   margin-top: 1em;
   padding: 1em 0 1em 0;
