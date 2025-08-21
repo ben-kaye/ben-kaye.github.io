@@ -23,7 +23,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "projects-implementing-sparc3d",
+        },{id: "post-3d-reconstruction-talk",
+      
+        title: "3D reconstruction talk",
+      
+      description: "links",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/3d-reconstruction-talk/";
+        
+      },
+    },{id: "projects-implementing-sparc3d",
           title: 'Implementing Sparc3D',
           description: "Using Sparc3D&#39;s paper as a reference.",
           section: "Projects",handler: () => {
