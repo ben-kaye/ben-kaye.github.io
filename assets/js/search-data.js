@@ -23,18 +23,7 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-a-post-with-formatting-and-links",
-      
-        title: "a post with formatting and links",
-      
-      description: "march &amp; april, looking forward to summer",
-      section: "Posts",
-      handler: () => {
-        
-          window.location.href = "/blog/2015/formatting-and-links/";
-        
-      },
-    },{id: "projects-implementing-sparc3d",
+        },{id: "projects-implementing-sparc3d",
           title: 'Implementing Sparc3D',
           description: "Using Sparc3D&#39;s paper as a reference.",
           section: "Projects",handler: () => {
@@ -44,6 +33,11 @@ ninja.data = [{
           description: "Sequential Model predictive control in MATLAB",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_drones/";
+            },},{id: "projects-signed-distance-field-tutorial",
+          title: 'Signed distance field tutorial',
+          description: "A primer on sign distance fields",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/3_sdf_primer/";
             },},{
         id: 'social-email',
         title: 'email',
