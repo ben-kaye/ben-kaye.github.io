@@ -4,7 +4,10 @@ import Footer from '../components/Footer.astro';
 import { site, aboutFacts } from '../data/site';
 ---
 
-<Base title={`CV - ${site.name}`}>
+<Base
+  title={`CV - ${site.name}`}
+  description={`Curriculum vitae for ${site.name}: ${site.role}, Y Combinator-backed robotics founder, and former OrganOx engineer.`}
+>
   <main>
     <section class="section">
       <div class="wrap">
