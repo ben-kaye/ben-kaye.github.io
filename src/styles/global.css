@@ -1,7 +1,7 @@
 /* Self-hosted fonts */
-@import '@fontsource/instrument-serif/400.css';
 @import '@fontsource/inter/400.css';
 @import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
 @import '@fontsource/jetbrains-mono/400.css';
 
 :root {
@@ -15,7 +15,7 @@
   --accent-soft: #f3e6dc;
 
   /* Type */
-  --font-display: 'Instrument Serif', Georgia, serif;
+  --font-display: 'Inter', system-ui, sans-serif;
   --font-body: 'Inter', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 
@@ -51,9 +51,9 @@ h1,
 h2,
 h3 {
   font-family: var(--font-display);
-  font-weight: 400;
+  font-weight: 600;
   line-height: 1.1;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
   margin: 0;
 }
 

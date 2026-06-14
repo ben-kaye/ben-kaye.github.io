@@ -6,12 +6,9 @@ export const site = {
   description:
     'Ben Kaye is a researcher in 3D computer vision at the Visual Geometry Group, University of Oxford, and the founder of a Y Combinator-backed robotics startup.',
   url: 'https://ben-kaye.github.io',
-  role: 'PhD candidate, Visual Geometry Group, Oxford',
+  role: 'Computer Vision PhD student at Visual Geometry Group, University of Oxford',
   bio: [
-    'I research learned 3D reconstruction.',
-    'I stepped away to co-found Remy AI, a YC-backed robotics startup, and have since returned to research.',
-    'Before the PhD, I built embedded systems for transplant surgery medical devices.',
-    'Actively seeking a research internship Summer 2027.'
+    'I research learned 3D reconstruction. Actively seeking a research internship Summer 2027.'
   ],
   email: 'kaye@robots.ox.ac.uk',
   location: 'Oxford, UK',
@@ -19,15 +16,17 @@ export const site = {
 
 export type Author = { name: string; eq?: boolean; me?: boolean };
 
+export type Link = { label: string; href: string };
+
 export type WorkItem = {
   title: string;
   year: string;
   blurb: string;
-  href: string;
-  cta: string;
+  links: Link[];
   tag?: string;
   published?: boolean;
   authors?: Author[];
+  image?: string;
 };
 
 export const work: WorkItem[] = [
@@ -35,7 +34,7 @@ export const work: WorkItem[] = [
     title: 'DualPM: Dual Posed-Canonical Point Maps for 3D Shape and Pose Reconstruction',
     year: '2025',
     blurb:
-      'Joint 3D shape and pose reconstruction from a single image.',
+      'Single-image 3D shape and pose recovery for deformable objects such as animals. By predicting paired posed and canonical point maps, deformation falls out as a difference. We train on synthetic data and get state-of-the-art results on real images.',
     tag: 'CVPR 2025 · Highlight',
     published: true,
     authors: [
@@ -45,29 +44,20 @@ export const work: WorkItem[] = [
       { name: 'Christian Rupprecht' },
       { name: 'Andrea Vedaldi' },
     ],
-    href: 'https://dualpm.github.io',
-    cta: 'Project page',
-  },
-  {
-    title: 'Reproducing Sparc3D from the paper',
-    year: '2025',
-    blurb:
-      '1024³ signed distance field reconstruction in under 30 seconds on 16 GiB of VRAM. Implemented from the paper before the official code was released.',
-    tag: 'Project',
-    published: false,
-    href: 'https://github.com/ben-kaye/Sparc3Dsdf',
-    cta: 'Repository',
+    links: [
+      { label: 'Project page', href: 'https://dualpm.github.io' },
+      { label: 'arXiv', href: 'https://arxiv.org/abs/2412.04464' },
+      { label: 'Code', href: 'https://github.com/DualPM/DualPM_Paper' },
+    ],
+    image: '/img/dualpm.webp',
   },
 ];
-
-export type Link = { label: string; href: string };
 
 export const links: Link[] = [
   { label: 'Email', href: 'mailto:kaye@robots.ox.ac.uk' },
   { label: 'GitHub', href: 'https://github.com/ben-kaye' },
-  { label: 'Google Scholar', href: 'https://scholar.google.com/citations?user=2alhGi4AAAAJ' },
-  { label: 'X / Twitter', href: 'https://x.com/ben_kaye_eye' },
-  { label: 'ORCID', href: 'https://orcid.org/0000-0003-2481-5856' },
+  { label: 'Scholar', href: 'https://scholar.google.com/citations?user=2alhGi4AAAAJ' },
+  { label: 'CV', href: '/cv' },
 ];
 
 export const aboutFacts = [

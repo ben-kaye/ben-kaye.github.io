@@ -9,7 +9,7 @@ interface Props {
 
 const { title = site.title, description = site.description } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site ?? site.url).toString();
-const ogImage = new URL('/img/prof.jpg', Astro.site ?? site.url).toString();
+const ogImage = new URL('/img/headshot-og.jpg', Astro.site ?? site.url).toString();
 ---
 
 <!doctype html>
