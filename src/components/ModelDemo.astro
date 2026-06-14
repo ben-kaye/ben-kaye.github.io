@@ -1,0 +1,141 @@
+---
+// Parked: not currently rendered on the page. Self-contained so it stays valid
+// and can be dropped back into a page (and re-wired to site.ts) when wanted.
+const demo = {
+  label: 'live demo · DualPM (CVPR 2025, highlight)',
+  caption:
+    'DualPM reconstructs 3D shape and pose from a single image as two coupled point maps: one in the camera frame, one in the object’s canonical frame, with no category-specific template. The model below is a real output, rendered live in your browser.',
+  projectUrl: 'https://dualpm.github.io',
+  models: [
+    { src: '/models/dualpm_anim_1.glb', label: 'Sample 1', animated: true },
+    { src: '/models/dualpm_anim_2.glb', label: 'Sample 2', animated: true },
+    { src: '/models/dualpm_static.glb', label: 'Sample 3', animated: false },
+  ],
+};
+const first = demo.models[0];
+---
+
+<section class="section" id="demo">
+  <div class="wrap wrap-wide">
+    <p class="label">{demo.label}</p>
+
+    <div class="viewer-frame">
+      <model-viewer
+        id="demo-viewer"
+        src={first.src}
+        alt="A 3D point map reconstructed by DualPM"
+        camera-controls
+        auto-rotate
+        autoplay
+        touch-action="pan-y"
+        interaction-prompt="none"
+        shadow-intensity="0"
+        exposure="1.05"
+        loading="eager"
+        style="background-color: transparent;"
+      >
+        <div slot="progress-bar" class="progress"></div>
+      </model-viewer>
+      <span class="hint">drag to rotate, scroll to zoom</span>
+    </div>
+
+    <div class="switcher" role="group" aria-label="Choose a sample">
+      {
+        demo.models.map((m, i) => (
+          <button
+            type="button"
+            class="chip"
+            data-src={m.src}
+            data-animated={String(m.animated)}
+            aria-pressed={i === 0 ? 'true' : 'false'}
+          >
+            {m.label}
+          </button>
+        ))
+      }
+    </div>
+
+    <p class="caption">
+      {demo.caption}{' '}
+      <a href={demo.projectUrl}>DualPM project page</a>.
+    </p>
+  </div>
+</section>
+
+<script>
+  import '@google/model-viewer';
+
+  const viewer = document.getElementById('demo-viewer') as any;
+  const chips = Array.from(document.querySelectorAll<HTMLButtonElement>('.chip'));
+
+  chips.forEach((chip) => {
+    chip.addEventListener('click', () => {
+      const src = chip.dataset.src;
+      if (!src || !viewer) return;
+      viewer.src = src;
+      chips.forEach((c) => c.setAttribute('aria-pressed', String(c === chip)));
+    });
+  });
+</script>
+
+<style>
+  .viewer-frame {
+    position: relative;
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    overflow: hidden;
+  }
+  model-viewer {
+    display: block;
+    width: 100%;
+    height: clamp(20rem, 56vw, 32rem);
+    --poster-color: transparent;
+  }
+  .progress {
+    display: none;
+  }
+  .hint {
+    position: absolute;
+    bottom: 0.75rem;
+    right: 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    pointer-events: none;
+  }
+  .switcher {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    margin-top: 0.9rem;
+  }
+  .chip {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--muted);
+    background: transparent;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    border-bottom: 1px solid transparent;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+  .chip:hover {
+    color: var(--ink);
+  }
+  .chip[aria-pressed='true'] {
+    color: var(--ink);
+    border-bottom-color: var(--accent);
+  }
+  .caption {
+    margin-top: 1.75rem;
+    color: var(--muted);
+    max-width: 46rem;
+    font-size: 0.97rem;
+  }
+  .caption a {
+    color: var(--accent);
+    white-space: nowrap;
+  }
+</style>

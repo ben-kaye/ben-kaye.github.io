@@ -1,0 +1,33 @@
+---
+import { site } from '../data/site';
+---
+
+<section class="section hero" id="top">
+  <div class="wrap">
+    <h1>{site.name}</h1>
+    <p class="role">{site.role}</p>
+    <div class="bio">
+      {site.bio.map((para) => <p>{para}</p>)}
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    padding-top: clamp(3rem, 9vw, 5.5rem);
+  }
+  h1 {
+    font-size: clamp(2.6rem, 9vw, 4.2rem);
+    margin-bottom: 0.5rem;
+  }
+  .role {
+    color: var(--muted);
+    margin-bottom: 2rem;
+  }
+  .bio {
+    max-width: 38rem;
+  }
+  .bio :global(p) {
+    margin-bottom: 1rem;
+  }
+</style>
