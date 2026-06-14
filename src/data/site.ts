@@ -2,9 +2,9 @@
 
 export const site = {
   name: 'Ben Kaye',
-  title: 'Ben Kaye - Spatial AI',
+  title: 'Ben Kaye - 3D Computer Vision',
   description:
-    'Ben Kaye is a researcher in 3D computer vision at the Visual Geometry Group, University of Oxford, and the founder of a Y Combinator-backed robotics startup.',
+    'Ben Kaye is a researcher in 3D computer vision at the Visual Geometry Group, University of Oxford, who previously founded a Y Combinator-backed robotics startup.',
   url: 'https://ben-kaye.com',
   role: 'Computer Vision PhD student at Visual Geometry Group, University of Oxford',
   bio: [
