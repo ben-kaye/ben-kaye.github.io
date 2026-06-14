@@ -61,9 +61,9 @@ export const links: Link[] = [
 ];
 
 export const aboutFacts = [
-  { when: '2023–present', what: 'PhD, Visual Geometry Group, University of Oxford. Supervised by Andrea Vedaldi and Tomas Jakab.' },
-  { when: '2025–2026', what: 'Co-founder, Remy AI (YC W26). Foundation models for warehouse robotics.' },
-  { when: '2023–2025', what: 'Consultant, OrganOx. Advancing liver transplant protocols.' },
-  { when: '2022–2023', what: 'Embedded systems engineer, OrganOx. Medical devices for transplant surgery.' },
-  { when: '2018–2022', what: 'MEng Engineering Science, University of Oxford. First-class honours.' },
+  { when: '2023–present', role: 'PhD student, Visual Geometry Group, University of Oxford', detail: 'Supervised by Andrea Vedaldi and Tomas Jakab.' },
+  { when: '2025–2026', role: 'Co-founder, Remy AI (YC W26)', detail: 'Foundation models for warehouse robotics.' },
+  { when: '2023–2025', role: 'Consultant, OrganOx', detail: 'Advancing liver transplant protocols.' },
+  { when: '2022–2023', role: 'Embedded systems engineer, OrganOx', detail: 'Medical devices for transplant surgery.' },
+  { when: '2018–2022', role: 'MEng Engineering Science, University of Oxford', detail: 'First-class honours.' },
 ];

@@ -113,3 +113,57 @@ img {
     scroll-behavior: auto;
   }
 }
+
+/* Mobile-only load reveal. One quiet, staggered settle on first paint — not a
+   per-element fade-in. Gated to small screens and motion-tolerant users, and
+   it resolves to the exact static layout (animation-fill: both), so desktop
+   and reduced-motion renders are untouched. */
+@media (max-width: 34rem) and (prefers-reduced-motion: no-preference) {
+  @keyframes settle {
+    from {
+      opacity: 0;
+      transform: translateY(0.6rem);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  .masthead,
+  .bio,
+  .affiliations,
+  #work .label,
+  #work .item,
+  .back,
+  .cv tbody tr {
+    animation: settle 0.55s cubic-bezier(0.22, 0.7, 0.24, 1) both;
+  }
+  .bio {
+    animation-delay: 0.07s;
+  }
+  .affiliations {
+    animation-delay: 0.14s;
+  }
+  #work .label {
+    animation-delay: 0.21s;
+  }
+  #work .item {
+    animation-delay: 0.27s;
+  }
+  /* CV: back link, then the entries settle in sequence. */
+  .cv tbody tr:nth-child(1) {
+    animation-delay: 0.07s;
+  }
+  .cv tbody tr:nth-child(2) {
+    animation-delay: 0.13s;
+  }
+  .cv tbody tr:nth-child(3) {
+    animation-delay: 0.19s;
+  }
+  .cv tbody tr:nth-child(4) {
+    animation-delay: 0.25s;
+  }
+  .cv tbody tr:nth-child(5) {
+    animation-delay: 0.31s;
+  }
+}

@@ -163,5 +163,23 @@ import { site, links } from '../data/site';
     .photo {
       width: 8rem;
     }
+    /* Wrapping a divider-separated row leaves dividers dangling at line
+       ends. Drop the dividers and let the marks wrap cleanly. */
+    .affiliations {
+      gap: 1.25rem 1.5rem;
+    }
+    .divider {
+      display: none;
+    }
+    /* Comfortable tap targets without shifting the visual baseline: pad the
+       links and pull the row back with a matching negative margin. */
+    .links {
+      row-gap: 0;
+      margin-block: -0.6rem;
+    }
+    .links a {
+      display: inline-block;
+      padding-block: 0.6rem;
+    }
   }
 </style>
