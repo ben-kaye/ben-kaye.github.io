@@ -38,17 +38,26 @@ import { site, links } from '../data/site';
     </div>
     <div class="affiliations" aria-label="Affiliations">
       <span class="affil" aria-label="University of Oxford">
-        <img src="/img/logos/oxford.svg" alt="" class="oxford-mark" />
+        <span class="affil-mark">
+          <img src="/img/logos/oxford.svg" alt="" class="oxford-mark" />
+        </span>
+        <span class="affil-note">Engineering masters</span>
       </span>
       <span class="divider" aria-hidden="true"></span>
       <span class="affil" aria-label="OrganOx">
-        <img src="/img/logos/organox-square.svg" alt="" class="organox-mark" />
-        <span class="organox-word">OrganOx</span>
+        <span class="affil-mark">
+          <img src="/img/logos/organox-square.svg" alt="" class="organox-mark" />
+          <span class="organox-word">OrganOx</span>
+        </span>
+        <span class="affil-note">Built robust controllers for a surgical device</span>
       </span>
       <span class="divider" aria-hidden="true"></span>
       <span class="affil" aria-label="Y Combinator">
-        <img src="/img/logos/yc.svg" alt="" width="28" height="28" class="yc-mark" />
-        <span class="yc-word">Combinator</span>
+        <span class="affil-mark">
+          <img src="/img/logos/yc.svg" alt="" width="28" height="28" class="yc-mark" />
+          <span class="yc-word">Combinator</span>
+        </span>
+        <span class="affil-note">Co-founder &amp; CTO of a robotics startup</span>
       </span>
     </div>
   </div>
@@ -130,7 +139,7 @@ import { site, links } from '../data/site';
   }
   .affiliations {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: clamp(1rem, 4vw, 2rem);
@@ -139,9 +148,22 @@ import { site, links } from '../data/site';
   }
   .affil {
     display: inline-flex;
+    flex: 1 1 0;
+    min-width: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.55rem;
+    color: inherit;
+  }
+  .affil-mark {
+    display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    color: inherit;
+  }
+  .affil-note {
+    font-size: 0.8rem;
+    line-height: 1.35;
+    color: var(--muted);
   }
   .affil svg {
     height: 2rem;
@@ -149,8 +171,8 @@ import { site, links } from '../data/site';
     fill: currentColor;
   }
   .divider {
-    width: 1px;
-    height: 1.6rem;
+    flex: 0 0 1px;
+    align-self: stretch;
     background: var(--border);
   }
   .oxford-mark {
