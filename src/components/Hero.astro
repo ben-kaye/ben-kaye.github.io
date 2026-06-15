@@ -31,6 +31,11 @@ import { site, links } from '../data/site';
     <div class="bio">
       {site.bio.map((para) => <p>{para}</p>)}
     </div>
+    <div class="previously" aria-hidden="true">
+      <span class="rule"></span>
+      <span class="prev-label">previously</span>
+      <span class="rule"></span>
+    </div>
     <div class="affiliations" aria-label="Affiliations">
       <span class="affil" aria-label="University of Oxford">
         <img src="/img/logos/oxford.svg" alt="" class="oxford-mark" />
@@ -107,12 +112,29 @@ import { site, links } from '../data/site';
   .bio :global(p) {
     margin-bottom: 1rem;
   }
+  .previously {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-top: clamp(1.75rem, 5vw, 2.5rem);
+    color: var(--muted);
+  }
+  .previously .rule {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+  .prev-label {
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
   .affiliations {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     flex-wrap: wrap;
     gap: clamp(1rem, 4vw, 2rem);
-    margin-top: clamp(1.75rem, 5vw, 2.5rem);
+    margin-top: clamp(1.1rem, 3vw, 1.5rem);
     color: var(--muted);
   }
   .affil {
@@ -166,6 +188,7 @@ import { site, links } from '../data/site';
     /* Wrapping a divider-separated row leaves dividers dangling at line
        ends. Drop the dividers and let the marks wrap cleanly. */
     .affiliations {
+      justify-content: flex-start;
       gap: 1.25rem 1.5rem;
     }
     .divider {
