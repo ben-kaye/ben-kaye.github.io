@@ -1,5 +1,5 @@
 ---
-import { site, links } from '../data/site';
+import { site, links, supervisors } from '../data/site';
 ---
 
 <section class="section hero" id="top">
@@ -30,6 +30,16 @@ import { site, links } from '../data/site';
     </div>
     <div class="bio">
       {site.bio.map((para) => <p>{para}</p>)}
+      <p class="supervisors">
+        Supervised by {
+          supervisors.map((s, i) => (
+            <>
+              {i > 0 && ' and '}
+              <a href={s.href}>{s.label}</a>
+            </>
+          ))
+        }.
+      </p>
     </div>
     <div class="previously" aria-hidden="true">
       <span class="rule"></span>
@@ -120,6 +130,17 @@ import { site, links } from '../data/site';
   }
   .bio :global(p) {
     margin-bottom: 1rem;
+  }
+  .supervisors :global(a) {
+    color: var(--ink);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    text-decoration-thickness: 1px;
+    text-decoration-color: var(--border);
+  }
+  .supervisors :global(a:hover) {
+    text-decoration-color: var(--accent);
+    color: var(--accent);
   }
   .previously {
     display: flex;

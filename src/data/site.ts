@@ -14,6 +14,11 @@ export const site = {
   location: 'Oxford, UK',
 };
 
+export const supervisors: Link[] = [
+  { label: 'Andrea Vedaldi', href: 'https://www.robots.ox.ac.uk/~vedaldi/' },
+  { label: 'Christian Rupprecht', href: 'https://chrirupp.github.io/' },
+];
+
 export type Author = { name: string; eq?: boolean; me?: boolean };
 
 export type Link = { label: string; href: string };
@@ -61,7 +66,7 @@ export const links: Link[] = [
 ];
 
 export const aboutFacts = [
-  { when: '2023–present', role: 'PhD student, Visual Geometry Group, University of Oxford', detail: 'Supervised by Andrea Vedaldi and Tomas Jakab.' },
+  { when: '2023–present', role: 'PhD student, Visual Geometry Group, University of Oxford', detail: 'Supervised by Andrea Vedaldi and Christian Rupprecht, formerly Tomas Jakab.' },
   { when: '2025–2026', role: 'Co-founder, Remy AI (YC W26)', detail: 'Foundation models for warehouse robotics.' },
   { when: '2023–2025', role: 'Consultant, OrganOx', detail: 'Advancing liver transplant protocols.' },
   { when: '2022–2023', role: 'Embedded systems engineer, OrganOx', detail: 'Medical devices for transplant surgery.' },
